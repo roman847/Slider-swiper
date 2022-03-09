@@ -1,0 +1,225 @@
+@import url("https://fonts.googleapis.com/css2?family=Akaya+Telivigala&family=League+Spartan:wght@100&family=Raleway:wght@100&family=Sansita+Swashed:wght@300&family=Shadows+Into+Light&display=swap");
+
+body {
+  height: 100vh;
+  background: rgb(210, 208, 205);
+  background: rgb(58, 81, 250);
+  background-color: #696969;
+  box-sizing: border-box;
+}
+img {
+  max-width: 100%;
+  height: 100%;
+  border-radius: 7%;
+}
+.carousel {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+
+  text-align: center;
+  transform: translate(-50%, -50%);
+}
+
+.item-comtainer {
+  position: relative;
+  width: 100%;
+  padding-bottom: 50px;
+  overflow: hidden;
+  background-color: #696969;
+  box-sizing: border-box;
+}
+
+.item {
+  display: none;
+  position: relative;
+  margin: 0 auto;
+  animation: 0.5s ease-in-out;
+}
+
+.active-slide,
+.next {
+  display: block;
+}
+
+.next {
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.description {
+  display: flex;
+  flex-direction: column;
+  margin: 60px 20%;
+  justify-content: space-between;
+}
+
+.item-name {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  margin-top: 20px;
+  order: 2;
+  color: #fff;
+  font-size: 40px;
+  font-family: "Akaya Telivigala";
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.dots {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 20%;
+  row-gap: 10px;
+  margin: 0 auto;
+  margin-top: -50px;
+}
+
+.container-dot {
+  padding: 20px;
+}
+
+.dot {
+  width: 25px;
+  height: 25px;
+  background-color: #87cefa;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.1s;
+}
+
+.dot:hover {
+  background-color: #fff;
+}
+
+.dot.active {
+  box-sizing: border-box;
+  border: 2px solid #87cefa;
+  background-color: #696969;
+}
+
+.dot.active:hover {
+  border: 2px solid #fff;
+}
+.control {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 15%;
+  cursor: pointer;
+}
+
+.control.left {
+  left: 0;
+  right: auto;
+}
+
+.control.right {
+  left: auto;
+  right: 0;
+}
+
+.arrow {
+  display: inline-block;
+  position: absolute;
+  top: 43%;
+  transform: translateY(-50%);
+  font-size: 100px;
+  color: #fff;
+}
+
+.arrow:hover {
+  opacity: 0.7;
+}
+
+.arrow.right {
+  right: 50%;
+}
+
+.to-left {
+  animation-name: left;
+}
+
+.to-right {
+  animation-name: right;
+  animation-direction: reverse;
+}
+
+.from-left {
+  animation-name: left;
+  animation-direction: reverse;
+}
+
+.from-right {
+  animation-name: right;
+}
+
+@keyframes left {
+  from {
+    left: 0;
+  }
+  to {
+    left: -100%;
+  }
+}
+
+@keyframes right {
+  from {
+    left: 100%;
+  }
+  to {
+    left: 0;
+  }
+}
+
+@media (max-width: 960px) {
+  .dot {
+    width: 20px;
+    height: 20px;
+  }
+  .item-name {
+    font-size: 32px;
+  }
+}
+
+@media (max-width: 768px) {
+  .arrow {
+    display: none;
+  }
+
+  .item-name {
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .dots {
+    width: 30%;
+  }
+
+  .text-content {
+    /* margin-top: 30px; */
+    margin: 0 auto;
+    font-size: 25px;
+    letter-spacing: 2px;
+  }
+}
+
+@media (max-width: 480px) {
+  .text-content {
+    margin: 0 auto;
+    font-size: 18px;
+  }
+  .item-name {
+    padding: 0;
+  }
+  .dot {
+    width: 15px;
+    height: 15px;
+  }
+}
